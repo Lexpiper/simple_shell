@@ -62,3 +62,34 @@ char *_strdup(char *str)
 	return (new_str);
 }
 
+/**
+ * _atoi - Converts a string to an integer.
+ * @s: String to convert.
+ *
+ * Return: Converted integer.
+ */
+int _atoi(char *s)
+{
+	unsigned int num;
+	int index, sign;
+
+	index = num = 0;
+	sign = 1;
+
+	for (; (!(s[index] >= 48 && s[index] <= 57)) && s[index] != '\0'; index++)
+	{
+		if (s[index] == 45)
+		    sign = sign * -1;
+	}
+
+	if (s[index] == '\0')
+	    return (num);
+
+	    for (; (s[index] >= 48 && s[index] <= 57) && s[index] != '\0'; index++)
+ 	{
+	    num = (num * 10) + (s[index] - 48);
+    	}
+
+   	 return (num * sign);
+}
+
