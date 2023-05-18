@@ -23,3 +23,5 @@ void print_errmsg(char **executable, char **args, int count)
 	write(STDERR_FILENO, msg, _strlen(msg));
 	write(STDERR_FILENO, new_line, _strlen(new_line));
 }
+
+
