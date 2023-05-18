@@ -47,3 +47,24 @@ void print_number(int n)
 	}
 }
 
+/**
+ * is_number - Checks if input is a number
+ * @str: Input to check
+ *
+ * Return: 1 if str is a number, 0 0therwise
+ */
+int is_number(char *str)
+{
+	int i = 0;
+
+	if (str == NULL)
+		return (0);
+
+	while (str[i])
+	{
+		if (str[i] < 47 || str[i] > 57)
+			return (0);
+		i++;
+	}
+	return (1);
+}
