@@ -52,3 +52,37 @@ char **tokenize_input(charrr *input)
 	// Return pointer to tok_list array
 	return (tok_list);
 }
+
+/**
+ * count_input_args - Counts the number of arguments in a user input string
+ * @input: user input string
+ * Return: number of arguments
+ */
+int count_input_args(char *input)
+{
+	int i, arg_count, arg_flag, j;
+	char *delimiters = " :"; /*define possible delimiters*/
+
+	arg_flag = i = 0;
+	arg_count = 1;
+
+	if (input == NULL) /*check for null input*/
+		return (arg_count);
+	while (input[i] != '\0') /*iterate through input*/
+	{
+		for (j = 0; delimiters[j] != '\0'; j++) /*iterate through delimiters*/
+		{
+			if (input[i] == delimiters[j] &&narg_flag == 0) /*check for delimiter and flag*/
+			{
+				arg_count++;  /*increment argument count*/
+				arg_flag = 1 /*set flag to 1*/
+				break;
+			}
+		}
+		if (delimiters[j] == '\0') /*check if reached end of delimiters*/
+			arg_flag = 0;  /*reset flag*/
+		i++;  /*increment index*/
+	}
+
+	return (arg_count + 1); /*add 1 to account for NULL terminator*/
+}
