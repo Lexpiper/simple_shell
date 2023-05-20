@@ -102,4 +102,50 @@ void print_env(void)
 	}
 }
 
+/**
+ *ss_cd - Changes the current working directory according to the argument provided
+
+ *@args: Null-terminated array of argument strings
+
+ *This function changes the current working directory to the path specified in the
+ *argument. It also handles errors such as changing to the home directory or
+ *previous directory or when the specified directory does not exist.
+
+ *Return: Nothing
+ */
+
+void ss_cd(char **args)
+{
+	char *home_dir = _get_env_var("HOME");
+	char *prev_dir = _get_env_var("OLDPWD");
+
+	/* if no arguments provided or tilde symbol used */
+	if ((args[1] == NULL && home_dir) || (args[1][0] == '~' && home_dir))
+	{
+		chdir(home_dir);
+	}
+	else if (args[1][0] == '~' && prev_dir)
+	{
+		chdir(prev_dir);
+	}
+	else if (chdir(args[1]) != 0)
+	{
+		perror("ss_cd");
+	}
+}
+
+
+/*
+ *shb_sighandle - Handles the SIGINT signal triggered by Ctrl-C
+ *@sign: The integer signal number
+ *This function handles the SIGINT signal triggered by Ctrl-C, and prints a
+ *new line followed by the shell prompt to make it clear that the signal
+ *was received and the shell is ready to accept new input.
+ *Return: void
+ */
+void ss_sighandle(int sign)
+{
+    if (sign == SIGINT)
+        write(STDOUT_FILENO, "\nSimple_shell~$ ", 3);
+}
 
