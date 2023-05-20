@@ -28,6 +28,7 @@ int ss_exit(char **args, char *buffer, int loops);
 void print_env(void);
 void ss_sighandle(int sign);
 void ss_cd(char **args);
+char *_get_env_var(char *name);
 
 #endif
 
