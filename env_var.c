@@ -1,7 +1,8 @@
 #include "shell.h"
 
 /**
- *_get_env_var - Searches for a specific environment variable and returns its value
+ *_get_env_var - Searches for a specific environment
+ *	variable and returns its value
  *@name: Name of the environment variable to search for
  *Return: Pointer to the corresponding value string
  */

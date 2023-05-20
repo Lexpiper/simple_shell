@@ -17,7 +17,7 @@ int handle_builtin(char **args, char *buffer, int loops)
 	/* call built-in env function */
 		print_env();
 	/* free allocated memory and rwturn 1 to continue shell loop */
-		_free(1, buffer), _free(2,args);
+		_free(1, buffer), _free(2, args);
 		return (1);
 	}
 	else if (_strcmp(buffer, "exit") == 0)
@@ -97,20 +97,18 @@ void print_env(void)
 
 	for (i = 0; environ[i] != NULL; i++)
 	{
-	write(STDOUT_FILENO, environ[i], _strlen(environ[i]));
-	write(STDOUT_FILENO, "\n", 1);
+		write(STDOUT_FILENO, environ[i], _strlen(environ[i]));
+		write(STDOUT_FILENO, "\n", 1);
 	}
 }
 
 /**
- *ss_cd - Changes the current working directory according to the argument provided
-
+ *ss_cd - Changes the current working directory according
+ *	to the argument provided
  *@args: Null-terminated array of argument strings
-
- *This function changes the current working directory to the path specified in the
  *argument. It also handles errors such as changing to the home directory or
  *previous directory or when the specified directory does not exist.
-
+ *
  *Return: Nothing
  */
 
@@ -136,16 +134,17 @@ void ss_cd(char **args)
 
 
 /*
- *shb_sighandle - Handles the SIGINT signal triggered by Ctrl-C
+ *ss_sighandle - Handles the SIGINT signal triggered by Ctrl-C
  *@sign: The integer signal number
  *This function handles the SIGINT signal triggered by Ctrl-C, and prints a
  *new line followed by the shell prompt to make it clear that the signal
  *was received and the shell is ready to accept new input.
  *Return: void
  */
+
 void ss_sighandle(int sign)
 {
-    if (sign == SIGINT)
-        write(STDOUT_FILENO, "\nSimple_shell~$ ", 3);
+	if (sign == SIGINT)
+		write(STDOUT_FILENO, "\nSimple_shell~$ ", 3);
 }
 
