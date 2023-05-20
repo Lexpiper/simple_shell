@@ -83,4 +83,23 @@ int ss_exit(char **args, char *buffer, int loops)
 }
 
 
+/**
+ *print_env - Prints the global environment variables
+ *This function prints the environment variables of the current process to
+ *
+ *standard output, each variable in a new line.
+ *
+ *Return: void
+ */
+void print_env(void)
+{
+	int i;
+
+	for (i = 0; environ[i] != NULL; i++)
+	{
+	write(STDOUT_FILENO, environ[i], _strlen(environ[i]));
+	write(STDOUT_FILENO, "\n", 1);
+	}
+}
+
 
