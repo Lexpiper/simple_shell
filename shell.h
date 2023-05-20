@@ -25,7 +25,9 @@ void print_errmsg(char **executable, char **args, int count);
 void print_number(int n);
 int is_number(char *str);
 int ss_exit(char **args, char *buffer, int loops);
-
+void print_env(void);
+void ss_sighandle(int sign);
+void ss_cd(char **args);
 
 #endif
 
