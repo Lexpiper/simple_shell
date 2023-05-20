@@ -24,6 +24,8 @@ int count_input_args(char *input);
 void print_errmsg(char **executable, char **args, int count);
 void print_number(int n);
 int is_number(char *str);
+int ss_exit(char **args, char *buffer, int loops);
+
 
 #endif
 
