@@ -18,8 +18,8 @@ int _strlen(char *str)
 
 /**
  * _strcmp - Compares two strings character by character.
- * @s1: First string.
- * @s2: Second string.
+ * @sl: First string
+ * @s2: Second string
  *
  * Return: Difference between the characters in the strings.
  */
@@ -31,16 +31,34 @@ int _strcmp(char *sl, char *s2)
 	{
 		index++;
 	}
-	
 	return (s1[index] - s2[index]);
 }
 /**
- * _strncmp - Compares two strings up to a certain number of characters
+ * _strncmp - Compares two strings up to a certain number of characters.
  * @s1: First string.
  * @s2: Second string.
  * @n: Number of characters to compare.
  *
  * Return: 0 if both strings are equal, n or -n if they are not.
+ */
+int _strncmp(char *s1, char *s2, int n)
+{
+	int index = 0, diff = 0;
+
+	while ((s1[index] != '\0' && s2[index] != '\0') && index < n)
+	{
+		diff = s1[index] - s2[index];
+		if (diff != 0)
+			break;
+		index++;
+	}
+	return (diff);
+}
+/**
+ * _strdup - Creates a new string and copies the given string into it.
+ * @str: String to copy.
+ *
+ * Return: Pointer to the new string or NULL if memory allocation fails.
  */
 char *_strdup(char *str)
 {
@@ -79,17 +97,16 @@ int _atoi(char *s)
 	for (; (!(s[index] >= 48 && s[index] <= 57)) && s[index] != '\0'; index++)
 	{
 		if (s[index] == 45)
-		    sign = sign * -1;
+			sign = sign * -1;
 	}
 
 	if (s[index] == '\0')
-	    return (num);
+		return (num);
 
-	    for (; (s[index] >= 48 && s[index] <= 57) && s[index] != '\0'; index++)
- 	{
+	for (; (s[index] >= 48 && s[index] <= 57) && s[index] != '\0'; index++)
+	{
 	    num = (num * 10) + (s[index] - 48);
-    	}
+	}
 
-   	 return (num * sign);
+	return (num * sign);
 }
-
