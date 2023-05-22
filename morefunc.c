@@ -25,7 +25,7 @@ void print_errmsg(char **executable, char **args, int count)
 }
 
 /**
- * prints_number - prints an integer using write
+ * print_number - print an integer using write
  * @n: Integer to be printed
  * Return: Nothing, void
  */
@@ -35,7 +35,7 @@ void print_number(int n)
 	char digit;
 	unsigned int num;
 
-	num =(unsigned int)n;
+	num = (unsigned int)n;
 	i = 1;
 	while ((num / i) > 9)
 		i *= 10;
