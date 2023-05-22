@@ -102,7 +102,6 @@ int _atoi(char *s)
 
 	if (s[index] == '\0')
 		return (num);
-
 	for (; (s[index] >= 48 && s[index] <= 57) && s[index] != '\0'; index++)
 	{
 	    num = (num * 10) + (s[index] - 48);
