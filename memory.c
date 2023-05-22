@@ -1,7 +1,8 @@
 #include "shell.h"
 
 /**
- * _free - Frees memory allocated by malloc accoding to the number of arguments passed
+ * _free - Frees memory allocated by malloc accoding to the number of arguments
+ * passed
  * @n: the number of arguments passed to the function
  * Return: nothing
  */
@@ -27,7 +28,7 @@ void _free(int n, ...)
 			return;
 		for (i = 0; str_array[i] != NULL; i++)
 			free(str_array[i]);
-		free(str-array);
+		free(str_array);
 	}
 
 	va_end(args);
