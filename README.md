@@ -33,7 +33,7 @@ This Simple Shell project was developed by Alexander Agwuncha and Favour Favour.
 
 ## Project Flowchart
 
-![Flowchart](./flowchart.png)
+![Flowchart](./flowchart.png.png)
 
 The flowchart above illustrates the execution flow and decision-making process within the Simple Shell program.
 
