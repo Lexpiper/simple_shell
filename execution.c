@@ -17,12 +17,16 @@ int run_command(char **arg_list)
 	pid = fork();
 	/* if error occured */
 	if (pid < 0)
+	{
 		exit(1);
+	}
 	else if (pid == 0)
 	{
 		/* execute the program with provided arguments */
 		if (execve(arg_list[0], arg_list, environ) == -1)
-				exit(127);
+		{
+			exit(127);
+		}
 	}
 	else
 	{
@@ -31,7 +35,8 @@ int run_command(char **arg_list)
 	if (WIFEXITED(status) && status != 0)
 		exit(WEXITSTATUS(status));
 	}
-	return(0);
+
+	return (0);
 
 }
 
