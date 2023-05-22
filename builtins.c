@@ -132,7 +132,7 @@ void ss_cd(char **args)
 }
 
 
-/*
+/**
  *ss_sighandle - Handles the SIGINT signal triggered by Ctrl-C
  *@sign: The integer signal number
  *This function handles the SIGINT signal triggered by Ctrl-C, and prints a
