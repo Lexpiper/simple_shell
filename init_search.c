@@ -11,7 +11,7 @@ int execute_file_program(char **args)
 {
 	struct stat stat_buf;
 
-	if (state(args[0], &state_buf) == 0 && access(args[0], X_OK) == 0)
+	if (stat(args[0], &stat_buf) == 0 && access(args[0], X_OK) == 0)
 	{
 		run_command(args);
 		return (0);
@@ -38,7 +38,7 @@ int search_dir(char **directories, char **args)
 {
 	char *current_working_dir;
 	int i;
-	stat sb;
+	struct stat sb;
 
 	current_working_dir = getcwd(NULL, 0);
 
