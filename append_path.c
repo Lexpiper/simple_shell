@@ -18,7 +18,7 @@ path = "";
 if (cmd == NULL)
 cmd = "";
 
-	full_path == malloc(((_strlen(path) + _strlen(cmd)) * sizeof(char)) + 2);
+	full_path = malloc(((_strlen(path) + _strlen(cmd)) * sizeof(char)) + 2);
 	if (full_path == NULL)
 		return (NULL);
 
