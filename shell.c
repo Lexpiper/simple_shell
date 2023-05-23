@@ -2,7 +2,7 @@
 
 /**
  * main - Creates a loop for to receive user call functions, parse the input
- * and check program type to execute a program file if success
+ * and checks program type to execute a program file if success
  * @argc: number of command line arguments
  * @argv: command line arguments
  * Return: 0, success, otherwise errors
