@@ -4,7 +4,7 @@
  * @input: user input string
  * Return: Apointer to an array of strings
  */
-char **tokenize_input(charrr *input)
+char **tokenize_input(char *input)
 {
 	/* Allocate memory for token list array*/
 	char **tok_list = malloc(sizeof(char *) * count_input_args(input));
@@ -15,7 +15,7 @@ char **tokenize_input(charrr *input)
 	if (input == NULL || tok_list == NULL)
 	{
 		/* Call _free to free allocated memory*/
-		_free(2, toke_list);
+		_free(2, tok_list);
 		/* Return NULL on failure*/
 		return (NULL);
 	}
@@ -63,11 +63,11 @@ int count_input_args(char *input)
 	{
 		for (j = 0; delimiters[j] != '\0'; j++) /*iterate through delimiters*/
 		{
-			if (input[i] == delimiters[j] && narg_flag == 0)
+			if (input[i] == delimiters[j] && arg_flag == 0)
 				/*check for delimiter and flag*/
 			{
 				arg_count++;  /*increment argument count*/
-				arg_flag = 1 /*set flag to 1*/
+				arg_flag = 1; /*set flag to 1*/
 				break;
 			}
 		}
