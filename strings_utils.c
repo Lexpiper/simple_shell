@@ -23,7 +23,7 @@ int _strlen(char *str)
  *
  * Return: Difference between the characters in the strings.
  */
-int _strcmp(char *sl, char *s2)
+int _strcmp(char *s1, char *s2)
 {
 	int index = 0;
 
