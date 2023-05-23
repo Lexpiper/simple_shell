@@ -1,4 +1,4 @@
-#include "shell.c"
+#include "shell.h"
 
 /**
  * main - Creates a loop for to receive user call functions, parse the input
