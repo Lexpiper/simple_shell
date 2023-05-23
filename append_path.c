@@ -13,10 +13,11 @@ char *append_path(char *path, char *cmd)
 {
 	int len_path = 0, len_cmd = 0;
 	char *full_path;
-if (path == NULL)
-path = "";
-if (cmd == NULL)
-cmd = "";
+
+	if (path == NULL)
+		path = "";
+	if (cmd == NULL)
+		cmd = "";
 
 	full_path = malloc(((_strlen(path) + _strlen(cmd)) * sizeof(char)) + 2);
 	if (full_path == NULL)
