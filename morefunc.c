@@ -18,7 +18,7 @@ void print_errmsg(char **executable, char **args, int count)
 	write(STDERR_FILENO, space, _strlen(space));
 	print_number(count);
 	write(STDERR_FILENO, space, _strlen(space));
-	write(STDERR_FILENO, args[0] _strlen(args[0]));
+	write(STDERR_FILENO, args[0], _strlen(args[0]));
 	write(STDERR_FILENO, space, _strlen(space));
 	write(STDERR_FILENO, msg, _strlen(msg));
 	write(STDERR_FILENO, new_line, _strlen(new_line));
@@ -42,7 +42,7 @@ void print_number(int n)
 	while (i >= 1)
 	{
 		digit = ((num / i) % 10) + '0';
-		write(STDERR_FILE, &digit, 1);
+		write(STDERR_FILENO, &digit, 1);
 		i /= 10;
 	}
 }
