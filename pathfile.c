@@ -2,10 +2,10 @@
 
 /**
  * get_path_file - searches in the PATH environment variable for a program file
- * path, stores subdirectories in an array, and validateds if the program file
+ * path, stores subdirectories in an array, and validates if the program file
  * path is available
  * @args: user input array arguments
- * Return: 0 on success, -1 on failure
+ * Return: 0 on success, -1 0n failure
  */
 int get_path_file(char **args)
 {
@@ -22,13 +22,13 @@ int get_path_file(char **args)
 		return (-1);
 	}
 
-	path_var = strtok(path, "=");
+	path_var = strtok(path, "=:");
 
 	while (path_var != NULL)
 	{
 		subdirs[index] = _strdup(path_var);
 
-		if (subdirs[index] == NULL)
+		if  (subdirs[index] == NULL)
 		{
 			_free(1, path);
 			_free(2, subdirs);
