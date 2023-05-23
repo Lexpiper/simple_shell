@@ -26,7 +26,7 @@ int get_path_file(char **args)
 
 	while (path_var != NULL)
 	{
-		subdir[index] = _strdup(path_var);
+		subdirs[index] = _strdup(path_var);
 
 		if (subdirs[index] == NULL)
 		{
