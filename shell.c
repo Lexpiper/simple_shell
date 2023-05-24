@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 		buffer_size = 0;
 		/*Display the shell prompt*/
 		if (isatty(STDIN_FILENO))
-			write(STDOUT_FILENO, "$ ", 2);
+			write(STDOUT_FILENO, "Simple shell_$$ ", 17);
 		/*Read the user input*/
 		if (getline(&input_buffer, &buffer_size, stdin) == EOF)
 		{
