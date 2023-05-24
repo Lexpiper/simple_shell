@@ -1,12 +1,7 @@
 #include "shell.h"
 
 /**
-<<<<<<< HEAD
- *handle_builtin - handles built-in shell commands.
-=======
  *handle_builtin - handles built-in shell commands
- *
->>>>>>> parent of 8013177 (updates description for function)
  *@args: Null-terminated array of argument strings
  *@buffer: pointer to user input buffer
  *@loops: number of times the shell loop has been execute
