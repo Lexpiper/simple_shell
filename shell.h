@@ -21,7 +21,6 @@
 
 /*global environment variable */
 extern char **environ;
-
 int execute_file_program(char **args);
 int search_dir(char **directories, char **args);
 int run_command(char **arg_list);
