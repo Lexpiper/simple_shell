@@ -43,7 +43,7 @@ int main(int argc, char **argv)
 			if (execute_file_program(args) == -1)
 				print_errmsg(argv, args, loops);
 		}
-		/*free allocated memory*/
+		
 		_free(1, input_buffer);
 		_free(2, args);
 		loops++;
